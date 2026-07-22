@@ -1,0 +1,30 @@
+<h2>Posts from REST API</h2>
+
+<button (click)="createPost()">
+  Create New Post
+</button>
+<button (click)="updatePost()">
+  Update Post
+</button>
+
+<button (click)="deletePost()">
+  Delete Post
+</button>
+
+<br><br>
+
+<br><br>
+
+<p>Total Posts Loaded: {{ posts.length }}</p>
+
+@for (post of posts; track post.id) {
+
+<div style="border:1px solid #ccc;padding:10px;margin:10px;">
+
+  <h3>{{ post.title }}</h3>
+
+  <p>{{ post.body }}</p>
+
+</div>
+
+}

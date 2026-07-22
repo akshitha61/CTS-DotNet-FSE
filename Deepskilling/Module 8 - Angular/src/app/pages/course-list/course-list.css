@@ -1,0 +1,8 @@
+h2 {
+  color: #1976d2;
+}
+
+app-course-card {
+  display: block;
+  margin-bottom: 10px;
+}

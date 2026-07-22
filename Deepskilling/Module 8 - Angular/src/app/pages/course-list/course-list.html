@@ -1,0 +1,58 @@
+<h2>Available Courses</h2>
+
+<input
+  type="text"
+  placeholder="Search course"
+  [(ngModel)]="searchTerm">
+
+<button (click)="searchCourses()">
+  Search
+</button>
+
+<p>
+  Current Search:
+  <strong>{{ searchTerm }}</strong>
+</p>
+
+<hr>
+
+@if (isLoading) {
+
+<p>Loading courses...</p>
+
+} @else {
+
+@for (course of courses; track course.id) {
+
+<div class="course-card">
+
+  <h3>{{ course.name }}</h3>
+
+  <p>Code: {{ course.code }}</p>
+
+  <p>Credits: {{ course.credits }}</p>
+
+  <button (click)="onEnroll(course.id)">
+    Enroll
+  </button>
+
+  <button (click)="viewCourse(course.id)">
+    View Details
+  </button>
+
+</div>
+
+<hr>
+
+}
+
+}
+
+@if (selectedCourseId) {
+
+<p>
+  Selected Course ID:
+  {{ selectedCourseId }}
+</p>
+
+}
